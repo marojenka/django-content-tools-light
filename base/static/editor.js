@@ -21,9 +21,12 @@ function findGetParameter(parameterName) {
 if (!findGetParameter('edit_off')) {
   window.addEventListener('load', function() {
     var editor;
+    // Ditch images. Hardcoded illusion that image sits at
+    // first position in third row of default_tools.
+    // So it will be broken at some point.
+    ContentTools.DEFAULT_TOOLS[2].splice(0, 1)
     editor = ContentTools.EditorApp.get();
     editor.init('*[data-editable]', 'data-name');
-
     editor.addEventListener('saved', function (ev) {
       var regions;
       regions = ev.detail().regions;
