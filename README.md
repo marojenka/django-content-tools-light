@@ -27,7 +27,7 @@ pages/templates/pages/page_form.html
 ```
 
 ## Hack
-In order to use contenttools not only for saved HTML markup but for editing
+In order to use contenttools not only for saving HTML markup but for editing
 embeded distict fields that should not be evaluated as HTML data little hack is
 suggested.  One might wrap model field with desired html tag, h1 or p or any
 div, by contenttools and then in backend strip this tag keeping data and markup
