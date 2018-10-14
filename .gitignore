@@ -1,0 +1,11 @@
+*.pyc
+*.mo
+db.sqlite3
+build/
+dist/
+.idea/
+.tox/
+
+.cache/
+.coverage
+htmlcov/

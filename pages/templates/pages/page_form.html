@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>{{object.title}}</title>
+  </head>
+  <body>
+    <section data-editable data-name="id_h1">
+      <h1>{{object.h1}}</h1>
+    </section>
+    <section data-editable data-name="id_content">
+      {{object.content|safe}}
+    </section>
+    <h1>{{object.h1}}</h1>
+    {% if perms.pages.can_edit %}
+    <link rel="stylesheet" type="text/css" href="/static/lib/contenttools/content-tools.min.css">
+    <script type="text/javascript" src="/static/lib/contenttools/content-tools.min.js"></script>
+    <script type="text/javascript" src="/static/editor.js"></script>
+    <form id='update_form' style='display:none' method='post'>
+      {%csrf_token%}
+      {{form.as_p}}
+    </form>
+    {% endif %}
+  </body>
+</html>
