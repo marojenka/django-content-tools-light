@@ -26,12 +26,18 @@ pages/views.py
 pages/templates/pages/page_form.html
 ```
 
-## Hack
+## Hacks
+#### Editing non-html fields
 In order to use contenttools not only for saving HTML markup but for editing
 embeded distict fields that should not be evaluated as HTML data little hack is
 suggested.  One might wrap model field with desired html tag, h1 or p or any
 div, by contenttools and then in backend strip this tag keeping data and markup
 separated.
+
+#### Remove image tool
+Image tool is removed using standard way of contenttools in `editor.js` by using hardcoded
+knolage of where `Image tool` is localted in `DEFAULT_TOOLS`, so
+something might go wrong if one uses different `DEFAULT_TOOLS` array.
 
 ## See also
 + Core project [contenttools](http://getcontenttools.com)
